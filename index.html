@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="fonts/font-awesome.min.css"/>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            color:#333;
+            cursor:pointer;
+        }
+        .btn{
+            display:block;
+            width:100px;
+            padding:5px;
+            margin:15px auto;
+            background-color: #27BEA2;
+            border-radius:7px;
+        }
+        body{
+            font:16px/1.5 arial, "Microsoft Yahei", "微软雅黑", STXihei, "华为细黑", sans-serif;
+        }
+        .container{
+            width:1000px;
+            margin:0 auto;
+        }
+        #header{
+            background: #b84d45 url(img/bg.png);
+            padding:50px 0;
+        }
+        .productions{
+            padding:50px;
+        }
+        .productions .pro-title{
+            background: #ccc;
+            padding:10px;
+        }
+        .productions .logo{
+            float:left;
+            font-size:24px;
+            color:#b84d45;
+        }
+        .productions .cubes li{
+            float:left;
+            margin-left:20px;
+            margin-top:20px;
+            border:1px solid #eee;
+            text-align:center;
+            position:relative;
+        }
+        .productions .cubes li img{
+            width:300px;
+            height:200px;
+        }
+        .cubes li .pf-text {
+            width: 300px;
+            height: 90px;
+            padding: 60px 0 50px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(51, 122, 183,0.6);
+            opacity: 0;
+            transition: all 0.6s ease-in-out;
+        }
+        /*第一个作品*/
+        .productions .cubes li:nth-of-type(1) .pf-text:before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 40px;
+            bottom: 50px;
+            left: 25px;
+            right: 25px;
+            border: 1px solid #fff;
+            border-left: 0;
+            border-right: 0;
+            opacity: 0;
+            transition: all 0.6s ease-in-out;
+            transform: translateY(-50px);
+        }
+        .cubes li:nth-of-type(1) .pf-text::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 25px;
+            bottom: 25px;
+            left: 35px;
+            right: 35px;
+            border: 1px solid #FFF;
+            border-top: 0;
+            border-bottom: 0;
+            opacity: 0;
+            transition: all 0.6s ease-in-out;
+            transform: translateX(-50px);
+        }
+        .cubes li:nth-of-type(1) .pf-text .text-title, .cubes li:nth-of-type(1) .pf-text .text-des {
+            transform: translateY(-70px);
+        }
+        .cubes li .pf-text .text-title, .cubes li .pf-text .text-des {
+            color: #fff;
+            transition: all 1.2s ease-in-out;
+        }
+        .cubes li .pf-text:hover {
+            opacity: 1;
+        }
+        .cubes li:nth-of-type(1) .pf-text:hover:before {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cubes li:nth-of-type(1) .pf-text:hover:after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .cubes li:nth-of-type(1) .pf-text:hover .text-title,
+        .cubes li:nth-of-type(1) .pf-text:hover .text-des{
+            transform: translateY(0);
+        }
+        /*第二个作品*/
+        .cubes li:nth-of-type(2) {
+            overflow: hidden;
+        }
+        .cubes li:nth-of-type(2) .pf-img {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .cubes li .pf-img {
+            transition: all 0.6s ease-in-out;
+        }
+        .cubes li:nth-of-type(2) .pf-text {
+            transform: scale(0);
+        }
+
+        .cubes li:nth-of-type(2) .show:hover .pf-text{
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .cubes li:nth-of-type(2) .pf-img {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .cubes li:nth-of-type(2) .show:hover .pf-img{
+            transform: scale(2);
+            opacity: 0;
+        }
+        /*第三个作品*/
+        .cubes li:nth-of-type(3) .pf-text .text-title,
+        .cubes li:nth-of-type(3) .pf-text .text-des{
+            transform: translateY(50px);
+        }
+
+        .cubes li:nth-of-type(3) .pf-text:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 35px;
+            bottom: 35px;
+            left: 25px;
+            right: 25px;
+            border: 1px solid #FFF;
+            border-left: 0;
+            border-right: 0;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+            transform: scale(0, 1);
+        }
+
+        .cubes li:nth-of-type(3) .pf-text::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 35px;
+            bottom: 35px;
+            left: 25px;
+            right: 25px;
+            border: 1px solid #FFF;
+            border-top: 0;
+            border-bottom: 0;
+            opacity: 0;
+            transition: all 0.6s ease-in-out;
+            transform: scale(1, 0);
+        }
+
+        .cubes li:nth-of-type(3) .pf-text:hover:before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .cubes li:nth-of-type(3) .pf-text:hover:after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .cubes li:nth-of-type(3) .pf-text:hover .text-title,
+        .cubes li:nth-of-type(3) .pf-text:hover .text-des{
+            transform: translateY(0);
+        }
+        /*第四个作品*/
+        .cubes li:nth-of-type(4) .show{
+            display:inline-block;
+            width:300px;
+            height:200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cubes li:nth-of-type(4) .pf-text {
+            background: rgba(12, 34, 52, 0.6);
+            width: 361px;
+            height: 0px;
+            padding: 0;
+            transform-origin: 0% 100%;
+            transform: translate(66px, 180px) rotate(-33.7deg) ;
+            transition: all 0.4s ease-in-out 0.4s;
+            opacity: 0;
+            position: absolute;
+            z-index: 4;
+        }
+
+        .cubes li:nth-of-type(4) .pf-text .text-title{
+            margin: 15px 0 5px 0;
+            padding: 10px;
+        }
+
+        .cubes li:nth-of-type(4) .pf-text .text-des{
+            padding: 15px;
+            margin: 0 0 15px 0;
+        }
+
+        .cubes li:nth-of-type(4) .mark-one {
+            opacity:0;
+            width: 361px;
+            height: 361px;
+            background: rgba(51, 122, 183,0.5);
+            position: absolute;
+            top: 0px;
+            right: -1px;
+            transform-origin: 100% 0;
+            transform:  rotate(56.3deg) translateX(-170px);
+            transition: all 0.4s ease-in-out;
+            z-index: 3;
+        }
+
+        .cubes li:nth-of-type(4) .mark-two {
+            opacity:0;
+            width: 361px;
+            height: 361px;
+            background: rgba(51, 122, 183,0.5);
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            transform-origin: 0% 100%;
+            transform:  rotate(56.3deg) translateX(170px);
+            transition: all 0.4s ease-in-out;
+            z-index: 3;
+        }
+
+        .cubes li:nth-of-type(4) .show:hover .pf-text {
+            transform:  translate(0px) rotateZ(0deg);
+            width: 300px;
+            height: 120px;
+            top: 50px;
+            opacity: 1;
+        }
+
+        .cubes li:nth-of-type(4) .show:hover .mark-one {
+            opacity:1;
+            transform:  rotate(56.3deg) translateX(0px);
+        }
+
+        .cubes li:nth-of-type(4) .show:hover .mark-two {
+            opacity:1;
+            transform:  rotate(56.3deg) translateX(0px);
+        }
+        /*第五个作品*/
+        .cubes li:nth-of-type(5) .pf-text {
+            transform-origin: 50% 0%;
+            transform: translate3d(0, 0, -250px) rotate3d(1, 0, 0, 90deg);
+            opacity: 0;
+            width: 300px;
+            height: 90px;
+            padding: 60px 0 50px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(51, 122, 183,0.6);
+            transition: all 0.6s ease-in-out;
+        }
+        .cubes li:nth-of-type(5) .show {
+            perspective: 1000px;
+            position: relative;
+            display: inline-block;
+            width: 300px;
+            height: 200px;
+        }
+        .cubes li:nth-of-type(5)  {
+            transform-style: preserve-3d;
+        }
+        .cubes li:nth-of-type(5) .pf-img {
+            transform-origin: 0% 0%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 200px;
+            transition: all 0.6s ease-in-out;
+        }
+        .cubes li:nth-of-type(5) .show:hover .pf-text {
+            transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 0deg);
+            opacity: 1;
+        }
+        .cubes li:nth-of-type(5) .show:hover .pf-img{
+            transform: translate3d(0, 250px, 0)
+            rotate3d(1, 0, 0, -90deg);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <h1>张文俊</h1>
+        <br/>
+        <p>
+            热爱前端开发
+            <br/>
+            学历：本科
+            <br/>
+            英语六级
+            <br/>
+        </p>
+    </div>
+</div>
+<div class="productions">
+    <div class="container">
+        <div class="pro-title">
+            <i class="logo fa fa-cubes"></i>
+            <h3>我的作品</h3>
+        </div>
+    </div>
+    <div class="container content">
+        <ul class="cubes">
+            <li>
+                <div class="pf-text">
+                    <h4 class="text-title">作品1简介</h4>
+                    <p class="text-des">my god</p>
+                </div>
+                <img src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
+                <h4>作品1简介</h4>
+                <a href="http://www.baidu.com" class="btn">查看源代码</a>
+            </li>
+            <li>
+                <a href="" class="show">
+                    <div class="pf-text">
+                        <h4 class="text-title">作品2简介</h4>
+                        <p class="text-des">my god</p>
+                    </div>
+                    <img class="pf-img" src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
+                </a>
+                <h4>作品2简介</h4>
+                <a href="javascript:" class="btn">查看源代码</a>
+            </li>
+            <li>
+                <div class="pf-text">
+                    <h4 class="text-title">作品3简介</h4>
+                    <p class="text-des">my god</p>
+                </div>
+                <img src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
+                <h4>作品3简介</h4>
+                <a href="javascript:" class="btn">查看源代码</a>
+            </li>
+            <li>
+                <a href="javascript:" class="show">
+                    <div class="mark-one"></div>
+                    <div class="mark-two"></div>
+                    <div class="pf-text">
+                        <h4 class="text-title">作品4简介</h4>
+                        <p class="text-des">my god</p>
+                    </div>
+                    <img src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
+                </a>
+                <h4>作品4简介</h4>
+                <a href="javascript:" class="btn">查看源代码</a>
+            </li>
+            <li>
+                <a href="" class="show">
+                    <div class="pf-text">
+                        <h4 class="text-title">作品5简介</h4>
+                        <p class="text-des">my god</p>
+                    </div>
+                    <img src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
+                </a>
+                <h4>作品5简介</h4>
+                <a href="javascript:" class="btn">查看源代码</a>
+            </li>
+            <li>
+                <div>
+
+                </div>
+                <img src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
+                <h4>作品6简介</h4>
+                <a href="javascript:" class="btn">查看源代码</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
