@@ -4,378 +4,157 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="fonts/font-awesome.min.css"/>
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            list-style-type: none;
-        }
-        a{
-            text-decoration: none;
-            color:#333;
-            cursor:pointer;
-        }
-        .btn{
-            display:block;
-            width:100px;
-            padding:5px;
-            margin:15px auto;
-            background-color: #27BEA2;
-            border-radius:7px;
-        }
-        body{
-            font:16px/1.5 arial, "Microsoft Yahei", "微软雅黑", STXihei, "华为细黑", sans-serif;
-        }
-        .container{
-            width:1000px;
-            margin:0 auto;
-        }
-        #header{
-            background: #b84d45 url(img/bg.png);
-            padding:50px 0;
-        }
-        .productions{
-            padding:50px;
-        }
-        .productions .pro-title{
-            background: #ccc;
-            padding:10px;
-        }
-        .productions .logo{
-            float:left;
-            font-size:24px;
-            color:#b84d45;
-        }
-        .productions .cubes li{
-            float:left;
-            margin-left:20px;
-            margin-top:20px;
-            border:1px solid #eee;
-            text-align:center;
-            position:relative;
-        }
-        .productions .cubes li img{
-            width:300px;
-            height:200px;
-        }
-        .cubes li .pf-text {
-            width: 300px;
-            height: 90px;
-            padding: 60px 0 50px 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: rgba(51, 122, 183,0.6);
-            opacity: 0;
-            transition: all 0.6s ease-in-out;
-        }
-        /*第一个作品*/
-        .productions .cubes li:nth-of-type(1) .pf-text:before{
-            content: '';
-            display: block;
-            position: absolute;
-            top: 40px;
-            bottom: 50px;
-            left: 25px;
-            right: 25px;
-            border: 1px solid #fff;
-            border-left: 0;
-            border-right: 0;
-            opacity: 0;
-            transition: all 0.6s ease-in-out;
-            transform: translateY(-50px);
-        }
-        .cubes li:nth-of-type(1) .pf-text::after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 25px;
-            bottom: 25px;
-            left: 35px;
-            right: 35px;
-            border: 1px solid #FFF;
-            border-top: 0;
-            border-bottom: 0;
-            opacity: 0;
-            transition: all 0.6s ease-in-out;
-            transform: translateX(-50px);
-        }
-        .cubes li:nth-of-type(1) .pf-text .text-title, .cubes li:nth-of-type(1) .pf-text .text-des {
-            transform: translateY(-70px);
-        }
-        .cubes li .pf-text .text-title, .cubes li .pf-text .text-des {
-            color: #fff;
-            transition: all 1.2s ease-in-out;
-        }
-        .cubes li .pf-text:hover {
-            opacity: 1;
-        }
-        .cubes li:nth-of-type(1) .pf-text:hover:before {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .cubes li:nth-of-type(1) .pf-text:hover:after {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .cubes li:nth-of-type(1) .pf-text:hover .text-title,
-        .cubes li:nth-of-type(1) .pf-text:hover .text-des{
-            transform: translateY(0);
-        }
-        /*第二个作品*/
-        .cubes li:nth-of-type(2) {
-            overflow: hidden;
-        }
-        .cubes li:nth-of-type(2) .pf-img {
-            transform: scale(1);
-            opacity: 1;
-        }
-        .cubes li .pf-img {
-            transition: all 0.6s ease-in-out;
-        }
-        .cubes li:nth-of-type(2) .pf-text {
-            transform: scale(0);
-        }
-
-        .cubes li:nth-of-type(2) .show:hover .pf-text{
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        .cubes li:nth-of-type(2) .pf-img {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        .cubes li:nth-of-type(2) .show:hover .pf-img{
-            transform: scale(2);
-            opacity: 0;
-        }
-        /*第三个作品*/
-        .cubes li:nth-of-type(3) .pf-text .text-title,
-        .cubes li:nth-of-type(3) .pf-text .text-des{
-            transform: translateY(50px);
-        }
-
-        .cubes li:nth-of-type(3) .pf-text:before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 35px;
-            bottom: 35px;
-            left: 25px;
-            right: 25px;
-            border: 1px solid #FFF;
-            border-left: 0;
-            border-right: 0;
-            opacity: 0;
-            transition: all 1s ease-in-out;
-            transform: scale(0, 1);
-        }
-
-        .cubes li:nth-of-type(3) .pf-text::after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 35px;
-            bottom: 35px;
-            left: 25px;
-            right: 25px;
-            border: 1px solid #FFF;
-            border-top: 0;
-            border-bottom: 0;
-            opacity: 0;
-            transition: all 0.6s ease-in-out;
-            transform: scale(1, 0);
-        }
-
-        .cubes li:nth-of-type(3) .pf-text:hover:before {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .cubes li:nth-of-type(3) .pf-text:hover:after {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .cubes li:nth-of-type(3) .pf-text:hover .text-title,
-        .cubes li:nth-of-type(3) .pf-text:hover .text-des{
-            transform: translateY(0);
-        }
-        /*第四个作品*/
-        .cubes li:nth-of-type(4) .show{
-            display:inline-block;
-            width:300px;
-            height:200px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cubes li:nth-of-type(4) .pf-text {
-            background: rgba(12, 34, 52, 0.6);
-            width: 361px;
-            height: 0px;
-            padding: 0;
-            transform-origin: 0% 100%;
-            transform: translate(66px, 180px) rotate(-33.7deg) ;
-            transition: all 0.4s ease-in-out 0.4s;
-            opacity: 0;
-            position: absolute;
-            z-index: 4;
-        }
-
-        .cubes li:nth-of-type(4) .pf-text .text-title{
-            margin: 15px 0 5px 0;
-            padding: 10px;
-        }
-
-        .cubes li:nth-of-type(4) .pf-text .text-des{
-            padding: 15px;
-            margin: 0 0 15px 0;
-        }
-
-        .cubes li:nth-of-type(4) .mark-one {
-            opacity:0;
-            width: 361px;
-            height: 361px;
-            background: rgba(51, 122, 183,0.5);
-            position: absolute;
-            top: 0px;
-            right: -1px;
-            transform-origin: 100% 0;
-            transform:  rotate(56.3deg) translateX(-170px);
-            transition: all 0.4s ease-in-out;
-            z-index: 3;
-        }
-
-        .cubes li:nth-of-type(4) .mark-two {
-            opacity:0;
-            width: 361px;
-            height: 361px;
-            background: rgba(51, 122, 183,0.5);
-            position: absolute;
-            bottom: 0px;
-            left: 0px;
-            transform-origin: 0% 100%;
-            transform:  rotate(56.3deg) translateX(170px);
-            transition: all 0.4s ease-in-out;
-            z-index: 3;
-        }
-
-        .cubes li:nth-of-type(4) .show:hover .pf-text {
-            transform:  translate(0px) rotateZ(0deg);
-            width: 300px;
-            height: 120px;
-            top: 50px;
-            opacity: 1;
-        }
-
-        .cubes li:nth-of-type(4) .show:hover .mark-one {
-            opacity:1;
-            transform:  rotate(56.3deg) translateX(0px);
-        }
-
-        .cubes li:nth-of-type(4) .show:hover .mark-two {
-            opacity:1;
-            transform:  rotate(56.3deg) translateX(0px);
-        }
-        /*第五个作品*/
-        .cubes li:nth-of-type(5) .pf-text {
-            transform-origin: 50% 0%;
-            transform: translate3d(0, 0, -250px) rotate3d(1, 0, 0, 90deg);
-            opacity: 0;
-            width: 300px;
-            height: 90px;
-            padding: 60px 0 50px 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background: rgba(51, 122, 183,0.6);
-            transition: all 0.6s ease-in-out;
-        }
-        .cubes li:nth-of-type(5) .show {
-            perspective: 1000px;
-            position: relative;
-            display: inline-block;
-            width: 300px;
-            height: 200px;
-        }
-        .cubes li:nth-of-type(5)  {
-            transform-style: preserve-3d;
-        }
-        .cubes li:nth-of-type(5) .pf-img {
-            transform-origin: 0% 0%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 300px;
-            height: 200px;
-            transition: all 0.6s ease-in-out;
-        }
-        .cubes li:nth-of-type(5) .show:hover .pf-text {
-            transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 0deg);
-            opacity: 1;
-        }
-        .cubes li:nth-of-type(5) .show:hover .pf-img{
-            transform: translate3d(0, 250px, 0)
-            rotate3d(1, 0, 0, -90deg);
-            opacity: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
-<div id="header">
-    <div class="container">
+<div id="header" class="clearfix">
         <h1>张文俊</h1>
         <br/>
-        <p>
-            热爱前端开发
-            <br/>
-            学历：本科
-            <br/>
-            英语六级
-            <br/>
-        </p>
+    <div class="container1">
+        <p>从初中就特别崇拜黑客，觉得他们是网络世界的构建者和颠覆者，也特别喜欢玩电脑，但玩的范畴局限在硬件和游戏上；</p>
+        <p>如今热爱coding，专注前端开发，熟悉Web标准，对原生js面向对象有所研究，热爱新技术，擅用各种前端工具，思维活跃，</p>
+        <p>好奇心强，具有较强的学习能力，活跃于github、coding和一些前端开发社区。</p>
+        <p>具有一定的代码洁癖，责任心强；</p>
+        <p>学历：大学本科</p>
+        <p>英语六级</p>
+    </div>
     </div>
 </div>
-<div class="productions">
-    <div class="container">
-        <div class="pro-title">
-            <i class="logo fa fa-cubes"></i>
-            <h3>我的作品</h3>
+    <div id="contact" class="container">
+        <ul class="clearfix">
+            <li>
+                <a href="javascript:">
+                    <i class="fa fa-envelope"></i>
+                    466253631@qq.com
+                </a>
+            </li>
+            <li>
+                <a href="javascript:">
+                    <i class="fa fa-phone"></i>
+                    18281861632
+                </a>
+            </li>
+            <li>
+                <a href="http://www.jianshu.com/u/82184c73b57f" target="_blank">
+                    <i class="fa fa-book"></i>
+                    http://www.jianshu.com
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div id="skill">
+        <div class="container clearfix">
+            <i class="fa fa-paper-plane logo1"></i>
+            <h3>我的技能</h3>
+        </div>
+        <ul class="clearfix">
+            <li>
+                <div class="progress html theme-1">
+                    90%
+                </div>
+                    <h4>HTML&CSS</h4>
+                    <p>精通HTML和CSS，熟练手写符合W3C规范的语义化页面</p>
+            </li>
+            <li>
+                <div class="progress html5 theme-1">
+                    70%
+                </div>
+                    <h4>HTML5&CSS3</h4>
+                    <p>熟悉HTML5语义化标签，熟练使用HTML5和CSS3常用新特性.</p>
+            </li>
+            <li>
+                <div class="progress html5 theme-1">
+                    70%
+                </div>
+                    <h4>photoshop切图</h4>
+                    <p>掌握利用Photoshop,Markman切图的技能</p>
+            </li>
+            <li>
+                <div class="progress js theme-1">
+                    80%
+                </div>
+                    <h4>JavaScript</h4>
+                    <p>熟悉ECMAScript语法,原生BOM/DOM,JSON, JSONP以及JS的原型和原型链等,并对JS的设置模式有所理解,且代码风格良好.</p>
+            </li>
+            <li>
+                <div class="progress webpack theme-1">
+                    65%
+                </div>
+                    <h4>JQuery</h4>
+                    <p>熟悉JQuery,手写JQuery插件实现常见效果,并对JQuery源码进行过研究.</p>
+            </li>
+            <li>
+                <div class="progress bootstrap theme-1">
+                    75%
+                </div>
+                    <h4>Bootstrap</h4>
+                    <p>使用Bootstrap完成常见响应式页面.</p>
+            </li>
+        </ul>
+        <div class="more">
+            <h3>More...</h3>
+            <span>HTTP</span>
+            <span>GIT</span>
+            <span>SEO</span>
+            <span>AJAX</span>
+            <span>Node.js</span>
+            <span>ES6</span>
+            <span>...</span>
         </div>
     </div>
-    <div class="container content">
-        <ul class="cubes">
+<div id="experience" class="container clearfix">
+    <div class="exp-title">
+        <i class="fa fa-wordpress logo"></i>
+        <h3>工作经历</h3>
+    </div>
+        <div class="tree">
+            <div class="experience pre">
+                <h4 class="company">达州金恒机械有限公司</h4>
+                <p>2016/8~2016/11</p>
+                <p>负责公司管理看板系统前端页面的开发和维护，主要使用jQuery和Bootstrap完成页面的实现和交互工作。</p>
+            </div>
+            <div class="experience">
+                <h4>外包团队</h4>
+                <p>2016/12~2017/2</p>
+                <p>参与北京某公司标准管理系统的开发，负责团队中前端页面的实现，主要使用Bootstrap来完成页面功能。</p>
+            </div>
+        </div>
+</div>
+    <div id="productions" class="container">
+        <div class="pro-title clearfix">
+            <i class="logo2 fa fa-cubes"></i>
+            <h3>我的作品</h3>
+        </div>
+    <div class="content">
+        <ul class="cubes clearfix">
             <li>
-                <div class="pf-text">
-                    <h4 class="text-title">作品1简介</h4>
-                    <p class="text-des">my god</p>
-                </div>
-                <img src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
-                <h4>作品1简介</h4>
+                <a href="" target="_blank">
+                    <div class="pf-text">
+                        <p class="text-des">一个在线购物商城，整合首屏轮播，店铺商品搜索切换，电商常用整站导航条，顶部粘连搜索框以及回到顶部等功能。</p>
+                    </div>
+                    <img src="img/1.jpg" alt=""/>
+                </a>
+                <h4>在线购物商城</h4>
                 <a href="http://www.baidu.com" class="btn">查看源代码</a>
             </li>
             <li>
                 <a href="" class="show">
                     <div class="pf-text">
-                        <h4 class="text-title">作品2简介</h4>
-                        <p class="text-des">my god</p>
+                        <p class="text-des">利用canvas绘制的时钟，绚丽精彩！</p>
                     </div>
-                    <img class="pf-img" src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
+                    <img class="pf-img" src="img/canvas-clock.png" alt=""/>
                 </a>
-                <h4>作品2简介</h4>
+                <h4>绚丽的时钟效果</h4>
                 <a href="javascript:" class="btn">查看源代码</a>
             </li>
             <li>
-                <div class="pf-text">
-                    <h4 class="text-title">作品3简介</h4>
-                    <p class="text-des">my god</p>
-                </div>
-                <img src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
-                <h4>作品3简介</h4>
+                <a href="">
+                    <div class="pf-text">
+                        <p class="text-des">利用JSONP抓取新浪新闻摘要，将摘要内容通过瀑布流的方式布局在页面上，并采用曝光加载实现无限滚动加载功能。</p>
+                    </div>
+                    <img src="img/sinanews.png" alt=""/>
+                </a>
+                <h4>新浪新闻摘要</h4>
                 <a href="javascript:" class="btn">查看源代码</a>
             </li>
             <li>
@@ -383,35 +162,46 @@
                     <div class="mark-one"></div>
                     <div class="mark-two"></div>
                     <div class="pf-text">
-                        <h4 class="text-title">作品4简介</h4>
-                        <p class="text-des">my god</p>
+                        <p class="text-des">常用企业站，包含常见前端效果：首页全屏轮播，导航条stickup，图片预加载，模块曝光淡入加载，滚动监听以及回到顶部功能，并使用requirejs进行打包处理</p>
                     </div>
-                    <img src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
+                    <img src="img/enterprise.png" alt=""/>
                 </a>
-                <h4>作品4简介</h4>
+                <h4>企业网站</h4>
                 <a href="javascript:" class="btn">查看源代码</a>
             </li>
             <li>
                 <a href="" class="show">
                     <div class="pf-text">
-                        <h4 class="text-title">作品5简介</h4>
-                        <p class="text-des">my god</p>
+                        <p class="text-des">利用AngularJS指令与表单合作验证，进而实现表单验证的敏捷化开发</p>
                     </div>
-                    <img src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
+                    <img src="img/register.png" alt=""/>
                 </a>
-                <h4>作品5简介</h4>
+                <h4>AngularJS表单验证</h4>
                 <a href="javascript:" class="btn">查看源代码</a>
             </li>
             <li>
-                <div>
-
-                </div>
-                <img src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg" alt=""/>
-                <h4>作品6简介</h4>
+                <a href="" class="show">
+                    <div class="pf-text">
+                        <i class="fa fa-plus-square-o"></i>
+                    </div>
+                    <img src="img/clock.png" alt=""/>
+                </a>
+                <h4>时钟</h4>
                 <a href="javascript:" class="btn">查看源代码</a>
             </li>
         </ul>
     </div>
+</div>
+<div id="info">
+    <h1>了解更多...</h1>
+    <p>日常使用GIT做版本控制，使用WebStorm进行开发，也在尝试新的工具，如Vim.</p>
+    <p>使用Markdown编写文档，撰写博客.</p>
+    <p>使用Google+github关键词来搜寻好用的库，在Stackoverflow上寻求问题解决之道.</p>
+    <p>把MDN当做文档来查，热爱书籍，啃各种技术文档.</p>
+    <p>在npm上了解更多好用的工具，也参与其中希望能贡献一份力量.</p>
+</div>
+<div id="goTop">
+    <a href="#header"><i class="fa fa-rocket"></i></a>
 </div>
 </body>
 </html>

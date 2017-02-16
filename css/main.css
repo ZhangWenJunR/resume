@@ -1,0 +1,550 @@
+*{
+    margin:0;
+    padding:0;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color:#333;
+    cursor:pointer;
+}
+.btn{
+    display:block;
+    width:100px;
+    padding:5px;
+    margin:15px auto;
+    background-color: #27BEA2;
+    border-radius:7px;
+}
+body{
+    font:16px/1.5 arial, "Microsoft Yahei", "微软雅黑", STXihei, "华为细黑", sans-serif;
+}
+.container{
+    width:1000px;
+    margin:10px auto;
+}
+.container1{
+    width:1100px;
+    margin:10px auto;
+}
+.clearfix:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+#header{
+    background: #b84d45 url(../img/bg.png);
+    padding:50px 0;
+    text-align: center;
+}
+#header p{
+    text-align: left;
+    font-size:20px;
+}
+#contact li{
+    float:left;
+    margin-left:50px;
+    font-size:24px;
+}
+#contact li a:hover{
+    text-decoration: underline;
+    color:#b84d45;
+}
+#skill{
+    width: 1000px;
+    padding: 10px;
+    background-color: #fff;
+    margin: 0px auto;
+    color: #494d55;
+    /*text-align: center;*/
+}
+#skill .logo1{
+    float:left;
+    font-size:24px;
+    line-height:1.8;
+    color:#b84d45;
+    padding-left:10px;
+}
+#skill h3{
+    line-height:2.3;
+}
+#skill .container{
+    background-color: #eee;
+}
+#skill li{
+    float: left;
+    width: 300px;
+    height:250px;
+    box-sizing: border-box;
+    text-align: center;
+    padding:10px;
+}
+#skill li p{
+    line-height:1.5
+}
+/*圆的公共部分*/
+#skill .progress {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 7px solid;
+    position: relative;
+    color: #030303;
+    font-weight: 500;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+#skill .progress:before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 7px solid;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+#skill .progress:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 7px solid;
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+#skill .progress.theme-1 {
+    border-color: #ccc #ccc #b84d45 #b84d45;
+}
+#skill .progress.theme-1:before {
+    border-color: transparent transparent #b84d45 #b84d45;
+}
+#skill .progress.theme-1:after {
+    border-color: transparent #b84d45 #b84d45 transparent;
+}
+/*第一个圆*/
+#skill .progress.html:after {
+    -webkit-transform: rotate(-22deg);
+    transform: rotate(-22deg);
+}
+/*第二个圆*/
+#skill .progress.html5:after {
+    -webkit-transform: rotate(50deg);
+    transform: rotate(50deg);
+}
+/*第三个圆*/
+#skill .progress.js:after {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+/*第四个圆*/
+#skill .progress.jquery:after {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+}
+/*第五个圆*/
+#skill .progress.webpack:after {
+    -webkit-transform: rotate(70deg);
+    transform: rotate(70deg);
+}
+/*第六个圆*/
+#skill .progress.bootstrap:after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#skill > .more > span {
+    display: inline-block;
+    padding: 6px 30px;
+    margin: 10px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    border: 1px solid #f5f5f5;
+}
+#skill > .more > h3 {
+    margin: 50px 0;
+}
+#skill > .more{
+    text-align: center;
+}
+#experience .exp-title{
+    width:1000px;
+    margin:0 auto;
+    background: #ccc;
+    padding:10px 0 10px 10px;
+    color:#494d55;
+}
+#experience .logo{
+    float:left;
+    font-size:24px;
+    color:#b84d45;
+}
+#experience .tree {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+#experience > .tree {
+    margin-top: 50px;
+    border-left: 5px solid #b84d45;
+    text-align: left;
+}
+#experience .tree .experience::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 3px solid #009688;
+    background-color: #fff;
+    z-index: 1234;
+    position: absolute;
+    top: 0;
+    left: -10px;
+}
+#experience .tree .experience {
+    position: relative;
+    padding-left: 20px;
+}
+/*.productions{
+    padding:10px;
+}*/
+#productions .pro-title{
+    background: #ccc;
+    padding:8px;
+    color:#494d55;
+    margin:50px 0 0 10px;
+}
+#productions .logo2{
+    float:left;
+    font-size:24px;
+    color:#b84d45;
+}
+#productions .cubes li{
+    float:left;
+    margin-left:20px;
+    margin-top:20px;
+    border:1px solid #eee;
+    text-align:center;
+    position:relative;
+    color:#b84d45;
+}
+#productions .cubes li .btn:hover{
+    color:#b84d45;
+}
+#productions .cubes li img{
+    width:300px;
+    height:200px;
+}
+#productions .cubes li .pf-text {
+    width: 300px;
+    height: 90px;
+    padding: 60px 0 50px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(51, 122, 183,0.6);
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+}
+/*第一个作品*/
+#productions .cubes li:nth-of-type(1) .pf-text:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: 25px;
+    right: 25px;
+    border: 1px solid #fff;
+    border-left: 0;
+    border-right: 0;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+    transform: translateY(-50px);
+}
+#productions .cubes li:nth-of-type(1) .pf-text::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    left: 35px;
+    right: 35px;
+    border: 1px solid #FFF;
+    border-top: 0;
+    border-bottom: 0;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+    transform: translateX(-50px);
+}
+#productions .cubes li .text-des{
+    padding:0 35px 0 35px;
+}
+#productions .cubes li:nth-of-type(1) .pf-text .text-title, .cubes li:nth-of-type(1) .pf-text .text-des {
+    transform: translateY(-70px);
+}
+#productions .cubes li .pf-text .text-title, .cubes li .pf-text .text-des {
+    color: #fff;
+    transition: all 1.2s ease-in-out;
+}
+#productions .cubes li .pf-text:hover {
+    opacity: 1;
+}
+#productions .cubes li:nth-of-type(1) .pf-text:hover:before {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#productions .cubes li:nth-of-type(1) .pf-text:hover:after {
+    opacity: 1;
+    transform: translateX(0);
+}
+#productions .cubes li:nth-of-type(1) .pf-text:hover .text-title,
+#productions .cubes li:nth-of-type(1) .pf-text:hover .text-des{
+    transform: translateY(0);
+}
+/*第二个作品*/
+#productions .cubes li:nth-of-type(2) {
+    overflow: hidden;
+}
+#productions .cubes li:nth-of-type(2) .pf-img {
+    transform: scale(1);
+    opacity: 1;
+}
+#productions .cubes li .pf-img {
+    transition: all 0.6s ease-in-out;
+}
+#productions .cubes li:nth-of-type(2) .pf-text {
+    transform: scale(0);
+}
+
+#productions .cubes li:nth-of-type(2) .show:hover .pf-text{
+    transform: scale(1);
+    opacity: 1;
+}
+
+#productions .cubes li:nth-of-type(2) .pf-img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#productions .cubes li:nth-of-type(2) .show:hover .pf-img{
+    transform: scale(2);
+    opacity: 0;
+}
+/*第三个作品*/
+#productions .cubes li:nth-of-type(3) .pf-text .text-title,
+#productions .cubes li:nth-of-type(3) .pf-text .text-des{
+    transform: translateY(50px);
+}
+
+#productions .cubes li:nth-of-type(3) .pf-text:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 35px;
+    bottom: 35px;
+    left: 25px;
+    right: 25px;
+    border: 1px solid #FFF;
+    border-left: 0;
+    border-right: 0;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    transform: scale(0, 1);
+}
+
+#productions .cubes li:nth-of-type(3) .pf-text::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 35px;
+    bottom: 35px;
+    left: 25px;
+    right: 25px;
+    border: 1px solid #FFF;
+    border-top: 0;
+    border-bottom: 0;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+    transform: scale(1, 0);
+}
+
+#productions .cubes li:nth-of-type(3) .pf-text:hover:before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#productions .cubes li:nth-of-type(3) .pf-text:hover:after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#productions .cubes li:nth-of-type(3) .pf-text:hover .text-title,
+#productions .cubes li:nth-of-type(3) .pf-text:hover .text-des{
+    transform: translateY(0);
+}
+/*第四个作品*/
+#productions .cubes li:nth-of-type(4) .show{
+    display:inline-block;
+    width:300px;
+    height:200px;
+    position: relative;
+    overflow: hidden;
+}
+
+#productions .cubes li:nth-of-type(4) .pf-text {
+    background: rgba(12, 34, 52, 0.6);
+    width: 361px;
+    height: 0px;
+    padding: 0;
+    transform-origin: 0% 100%;
+    transform: translate(66px, 180px) rotate(-33.7deg) ;
+    transition: all 0.4s ease-in-out 0.4s;
+    opacity: 0;
+    position: absolute;
+    z-index: 4;
+}
+
+#productions .cubes li:nth-of-type(4) .pf-text .text-title{
+    margin: 15px 0 5px 0;
+    padding: 10px;
+}
+
+#productions .cubes li:nth-of-type(4) .pf-text .text-des{
+    padding: 15px;
+    margin: 0 0 15px 0;
+}
+
+#productions .cubes li:nth-of-type(4) .mark-one {
+    opacity:0;
+    width: 361px;
+    height: 361px;
+    background: rgba(51, 122, 183,0.5);
+    position: absolute;
+    top: 0;
+    right: -1px;
+    transform-origin: 100% 0;
+    transform:  rotate(56.3deg) translateX(-170px);
+    transition: all 0.4s ease-in-out;
+    z-index: 3;
+}
+
+#productions .cubes li:nth-of-type(4) .mark-two {
+    opacity:0;
+    width: 361px;
+    height: 361px;
+    background: rgba(51, 122, 183,0.5);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transform-origin: 0% 100%;
+    transform:  rotate(56.3deg) translateX(170px);
+    transition: all 0.4s ease-in-out;
+    z-index: 3;
+}
+
+#productions .cubes li:nth-of-type(4) .show:hover .pf-text {
+    transform:  translate(0px) rotateZ(0deg);
+    width: 300px;
+    height: 150px;
+    top: 30px;
+    opacity: 1;
+}
+
+#productions .cubes li:nth-of-type(4) .show:hover .mark-one {
+    opacity:1;
+    transform:  rotate(56.3deg) translateX(0px);
+}
+
+#productions .cubes li:nth-of-type(4) .show:hover .mark-two {
+    opacity:1;
+    transform:  rotate(56.3deg) translateX(0px);
+}
+/*第五个作品*/
+#productions .cubes li:nth-of-type(5) .pf-text {
+    transform-origin: 50% 0%;
+    transform: translate3d(0, 0, -250px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+    width: 300px;
+    height: 90px;
+    padding: 60px 0 50px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(51, 122, 183,0.6);
+    transition: all 0.6s ease-in-out;
+}
+#productions .cubes li:nth-of-type(5) .show {
+    perspective: 1000px;
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+}
+#productions .cubes li:nth-of-type(5)  {
+    transform-style: preserve-3d;
+}
+#productions .cubes li:nth-of-type(5) .pf-img {
+    transform-origin: 0% 0%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 200px;
+    transition: all 0.6s ease-in-out;
+}
+#productions .cubes li:nth-of-type(5) .show:hover .pf-text {
+    transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 0deg);
+    opacity: 1;
+}
+#productions .cubes li:nth-of-type(5) .show:hover .pf-img{
+    transform: translate3d(0, 250px, 0)
+    rotate3d(1, 0, 0, -90deg);
+    opacity: 0;
+}
+/*第六个作品*/
+#productions .cubes li:nth-of-type(6) .pf-text{
+    font-size:70px;
+    color:white;
+
+}
+#info{
+    background: #b84d45 url(../img/bg.png);
+    padding:50px 0;
+    text-align: center;
+    margin-top:20px;
+}
+#info p{
+    font-size:20px;
+}
+#goTop{
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    font-size: 60px;
+    transition: 1s;
+    z-index: 2;
+}
+#goTop:hover {
+    transform: scale(1.5);
+}
+
+#goTop .fa-rocket {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(-45deg);
+    color: rgba(53, 150, 40,0.8);
+}
