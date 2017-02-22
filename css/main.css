@@ -36,6 +36,7 @@ body{
     background: #b84d45 url(../img/bg.png);
     padding:50px 0;
     text-align: center;
+    color:rgba(255,255,255,0.7);
 }
 #header p{
     text-align: left;
@@ -49,6 +50,22 @@ body{
 #contact li a:hover{
     text-decoration: underline;
     color:#b84d45;
+}
+nav{
+    text-align: center;
+    padding:20px 0;
+    transition:all 0.4s;
+    background-color:rgba(200,200,200,.8);
+}
+nav > ul > li {
+    display: inline-block;
+}
+nav > ul > li > a {
+    display: block;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(177,76,69,.8);
 }
 #skill{
     width: 1000px;
@@ -125,42 +142,42 @@ body{
     -webkit-transition: all .5s;
     transition: all .5s;
 }
-#skill .progress.theme-1 {
+#skill .theme-1 {
     border-color: #ccc #ccc #b84d45 #b84d45;
 }
-#skill .progress.theme-1:before {
+#skill .theme-1:before {
     border-color: transparent transparent #b84d45 #b84d45;
 }
-#skill .progress.theme-1:after {
+#skill .theme-1:after {
     border-color: transparent #b84d45 #b84d45 transparent;
 }
 /*第一个圆*/
-#skill .progress.html:after {
+#skill .html:after {
     -webkit-transform: rotate(-22deg);
     transform: rotate(-22deg);
 }
 /*第二个圆*/
-#skill .progress.html5:after {
+#skill .html5:after {
     -webkit-transform: rotate(50deg);
     transform: rotate(50deg);
 }
 /*第三个圆*/
-#skill .progress.js:after {
+#skill .js:after {
     -webkit-transform: rotate(-5deg);
     transform: rotate(-5deg);
 }
 /*第四个圆*/
-#skill .progress.jquery:after {
+#skill .jquery:after {
     -webkit-transform: rotate(-15deg);
     transform: rotate(-15deg);
 }
 /*第五个圆*/
-#skill .progress.webpack:after {
+#skill .webpack:after {
     -webkit-transform: rotate(70deg);
     transform: rotate(70deg);
 }
 /*第六个圆*/
-#skill .progress.bootstrap:after {
+#skill .bootstrap:after {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
 }
@@ -168,7 +185,7 @@ body{
     display: inline-block;
     padding: 6px 30px;
     margin: 10px;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
     border: 1px solid #f5f5f5;
 }
 #skill > .more > h3 {
@@ -198,7 +215,7 @@ body{
     border-left: 5px solid #b84d45;
     text-align: left;
 }
-#experience .tree .experience::before {
+#experience .tree .experience:before {
     content: "";
     display: block;
     width: 15px;
@@ -477,16 +494,8 @@ body{
     transform-origin: 50% 0%;
     transform: translate3d(0, 0, -250px) rotate3d(1, 0, 0, 90deg);
     opacity: 0;
-    width: 300px;
-    height: 90px;
-    padding: 60px 0 50px 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(51, 122, 183,0.6);
-    transition: all 0.6s ease-in-out;
 }
-#productions .cubes li:nth-of-type(5) .show {
+#productions .cubes li:nth-of-type(5)>.show {
     perspective: 1000px;
     position: relative;
     display: inline-block;
@@ -501,15 +510,12 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    width: 300px;
-    height: 200px;
-    transition: all 0.6s ease-in-out;
 }
-#productions .cubes li:nth-of-type(5) .show:hover .pf-text {
+#productions .cubes li:nth-of-type(5)>.show:hover .pf-text {
     transform: translate3d(0, 0, 0) rotate3d(1, 0, 0, 0deg);
     opacity: 1;
 }
-#productions .cubes li:nth-of-type(5) .show:hover .pf-img{
+#productions .cubes li:nth-of-type(5)>.show:hover .pf-img{
     transform: translate3d(0, 250px, 0)
     rotate3d(1, 0, 0, -90deg);
     opacity: 0;
