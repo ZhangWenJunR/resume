@@ -38,6 +38,27 @@ body{
     text-align: center;
     color:rgba(255,255,255,0.7);
 }
+#header > .icon{
+    position:relative;
+    top:-30px;
+}
+#header > .icon > ul > li{
+    float:left;
+}
+#header > .icon > ul > li > a {
+    font-size:24px;
+    display: block;
+    color: rgba(0,200,0,.8);
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    margin: 0 14px;
+    border: 2px solid rgba(0,200,0,.8);
+    border-radius: 50%;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
 #header p{
     text-align: left;
     font-size:20px;
