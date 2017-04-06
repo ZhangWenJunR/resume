@@ -1,0 +1,111 @@
+#!/usr/bin/env node
+var http = require("http")
+var fs = require("fs")
+var Url = require('url')
+var exec = require('child_process').exec;
+var argv = require('yargs').argv;
+var marked = require("marked");
+
+if(argv.init || argv.i){
+  console.log("说明：")
+  console.log('切换到需要开启服务器的文件夹下')
+  console.log("mark即可开启静态服务器，默认打开当前目录下的index.html")
+  console.log("使用 mark --f=filename 即可将该文件设为默认打开文件")
+  console.log("将filename换做markdown文件即可实现Markdown文件的预览 ")
+}else{
+  var server = http.createServer(function(request,response){
+    var path = Url.parse(request.url).pathname;
+    if(!argv.f){
+      if(path[path.length - 1] === "/"){
+        path += "index.html"
+      }
+    }
+    path = decodeURI(path);
+    path = path.substr(1);
+    if(fs.existsSync(path)){
+      fs.readFile(path,function(error,content){
+        if(error){
+          response.writeHead(500);
+          response.end();
+        }else{
+          if(/\.md$/.test(path)){
+            var contentStr = content.toString();
+            var c = marked(contentStr);
+            c = '<meta charset="utf-8">' +
+            '<style>' +
+            'body {margin: 24px;font: 14px "微软雅黑", "Lucida Grande",' +
+            'Helvetica, Arial, sans-serif;margin: 0 50px;}' +
+            'h1 {font-weight: normal;font-size: 32px;}' +
+            'h2 {font-weight: normal;font-size: 24px;}' +
+            'h3 {font-weight: normal;font-size: 18px;}' +
+            '.quote {background-color: #e8e8e8;border-left' +
+            ': 5px solid #cacaca;padding: 3px 0 3px 24px;' +
+            'border-radius: 3px; margin: 0;}' +
+            'img {display:block;text-align:center}' +
+            'code {background-color: #e8e8e8;' +
+            'border-left: 10px solid #cacaca;padding: 3px 0 3px 24px;' +
+            'border-radius: 3px;margin: 0;font-family:' +
+            'Consolas, Monaco, "Lucida Console", monospace;' +
+            'padding: 0 5px;margin-left: 2px;margin-right: 2px;' +
+            'border: 1px solid #cacaca;}' +
+            'code p {margin: 1px 0;display:block;}pre {' +
+            'background-color: #e8e8e8;' +
+            "border-left: 5px solid #cacaca;" +
+            'padding: 3px 0 3px 24px;' +
+            'border-radius: 3px;' +
+            'margin: 0;border-left-width: 32px;' +
+            'padding-left: 12px;}' +
+            'pre p {margin: 1px 0;}' +
+            'pre code {border: 0;padding: 0;margin: 10px 0;}' +
+            'blockquote {background-color: #e8e8e8;' +
+            'border-left: 5px solid #cacaca;' +
+            'padding: 3px 0 3px 24px;' +
+            'border-radius: 3px;' +
+            'margin: 0;}' +
+            'blockquote p {margin: 1px 0;}' +
+            'blockquote code {background-color: #f8f8f8;}' +
+            'a {color: #666;text-decoration: underline;}' +
+            'a:visited {color: #999;}' +
+            'a:hover {color: #000;}' +
+            'ul,ol {margin: 0;padding: 0;}' +
+            'ul li,ol li {margin-left: 1.2em;padding: 0;}' +
+            'ul li {list-style-type: square;}p {text-indent: 2rem;}' +
+            'hr {height: 1px;border: 0;background-color: #999;}' +
+            '</style>' + c;
+            response.writeHead(200,{'Content-Type':'text/html'});
+            response.write(c);
+            response.end();
+          }else{
+            response.writeHead(200);
+            response.write(content);
+            response.end();
+          }
+        }
+      })
+    }else{
+      response.writeHead(404);
+      response.end();
+    }
+  })
+
+  server.listen(1234);
+  if(argv.f){
+    var url = 'http://127.0.0.1:1234/' + argv.f;
+  }else{
+    var url = 'http://127.0.0.1:1234/'
+  }
+
+  switch(process.platform){
+    case "darwin":
+      exec('open ' + url);
+      break;
+    case 'win32':
+      exec('start ' + url);
+      break;
+    default:
+      exec('xdg-open ',[url]);
+  }
+  console.log("服务器运行在 http://127.0.0.1:1234")
+}
+
+

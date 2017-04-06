@@ -1,0 +1,28 @@
+{
+  "name": "mark-server",
+  "version": "0.9.2",
+  "description": "A server base on Nodejs",
+  "main": "index.js",
+  "bin": {
+    "mark": "./bin/server"
+  },
+  "dependencies": {
+    "yargs": "^6.2.0",
+    "marked": "^0.3.6"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feng-fu/mark-server.git"
+  },
+  "author": "duocai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feng-fu/mark-server/issues"
+  },
+  "homepage": "https://github.com/feng-fu/mark-server#readme"
+}
