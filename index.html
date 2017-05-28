@@ -4,10 +4,32 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="fonts/font-awesome.min.css"/>
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
-<div id="header" class="clearfix">
+<header class="container-fluid text-center" id="header">
+    <div class="row container-fluid text-center">
+        <div class="col-md-1 icon"><a href="https://github.com/ZhangWenJunR/resume"><i class="fa fa-github"></i></a></div>
+        <div class="col-md-1 icon"><a href="javascript:"><i class="fa fa-weibo"></i></a></div>
+    </div>
+    <!--<div class="icon">
+        <ul>
+            <li><a href="https://github.com/ZhangWenJunR/resume"><i class="fa fa-github"></i></a></li>
+            <li><a href="javascript:"><i class="fa fa-weibo"></i></a></li>
+        </ul>
+    </div>-->
+    <div class="information">
+        <h1>张文俊</h1>
+        <br/>
+        <p>从初中就特别崇拜黑客，觉得他们是网络世界的构建者和颠覆者，也特别喜欢玩电脑，但玩的范畴局限在硬件和游戏上;</p>
+        <p>如今热爱coding，专注前端开发，熟悉Web标准，对原生js面向对象有所研究，热爱新技术，擅用各种前端工具，思维活跃,</p>
+        <p>具有一定的代码洁癖，责任心强。</p>
+        <p>学历：大学本科</p>
+        <p>英语六级</p>
+    </div>
+</header>
+<!--<div id="header" class="clearfix">
     <div class="icon">
         <ul>
             <li><a href="https://github.com/ZhangWenJunR/resume"><i class="fa fa-github"></i></a></li>
@@ -16,23 +38,187 @@
     </div>
         <h1>张文俊</h1>
         <br/>
-    <div class="container1">
-        <p>从初中就特别崇拜黑客，觉得他们是网络世界的构建者和颠覆者，也特别喜欢玩电脑，但玩的范畴局限在硬件和游戏上；</p>
-        <p>如今热爱coding，专注前端开发，熟悉Web标准，对原生js面向对象有所研究，热爱新技术，擅用各种前端工具，思维活跃，</p>
+    <div class="container-diy">
+        <p>从初中就特别崇拜黑客，觉得他们是网络世界的构建者和颠覆者，也特别喜欢玩电脑，但玩的范畴局限在硬件和游戏上;</p>
+        <p>如今热爱coding，专注前端开发，熟悉Web标准，对原生js面向对象有所研究，热爱新技术，擅用各种前端工具，思维活跃,</p>
         <p>好奇心强，具有较强的学习能力，活跃于github、coding和一些前端开发社区。</p>
         <p>具有一定的代码洁癖，责任心强；</p>
         <p>学历：大学本科</p>
         <p>英语六级</p>
     </div>
+    </div>-->
+<nav class="navbar navbar-default navbar-fixed-top nav-bar-diy" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navlist">
+            <ul class="nav navbar-nav">
+                <li class="blank"><a href="#skill">我的技能</a></li>
+                <li><a href="#experience">工作经历</a></li>
+                <li><a href="#productions">我的作品</a></li>
+                <li><a href="#">了解更多</a></li>
+            </ul>
+        </div>
     </div>
-<nav class="theme-1" style="width:1500px height:30px opacity:0 display:block">
-    <ul class="clearfix">
+</nav>
+
+<!--<nav class="navbar navbar-default nav-diy" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand pull-left" href="#skill">我的技能</a>
+            <a class="navbar-brand" href="#experience">工作经历</a>
+            <a class="navbar-brand" href="#productions">我的作品</a>
+            <a class="navbar-brand" href="#info">了解更多</a>
+        </div>
+    </div>
+</nav>-->
+<!--我的技能-->
+<div class="row container-fluid text-center" id="skill">
+    <div class="col-md-12 title-bar">
+        <div>
+            <h3><i class="fa fa-paper-plane logo1"></i>我的技能</h3>
+        </div>
+    </div>
+    <div class="col-md-2 col-md-offset-3">
+        <div class="circleProgress_wrapper center-block">
+            <div class="progress">
+                <p class="progressText">90</p>
+                <div class="box"></div>
+                <div class="wrapper right">
+                    <div class="circleProgress rightcircle"></div>
+                </div>
+                <div class="wrapper left">
+                    <div class="circleProgress leftcircle"></div>
+                </div>
+            </div>
+        </div>
+        <h4>HTML&amp;CSS</h4>
+        <p>精通HTML和CSS，熟练手写符合W3C规范的语义化页面</p>
+    </div>
+    <div class="col-md-2">
+        <div class="circleProgress_wrapper center-block">
+            <div class="progress">
+                <p class="progressText">70</p>
+                <div class="box"></div>
+                <div class="wrapper right">
+                    <div class="circleProgress rightcircle"></div>
+                </div>
+                <div class="wrapper left">
+                    <div class="circleProgress leftcircle"></div>
+                </div>
+            </div>
+        </div>
+        <h4>HTML5&amp;CSS3</h4>
+        <p>熟悉HTML5语义化标签，熟练使用HTML5和CSS3常用新特性.<a target="_blank" href="https://yeyuqiufenghe.github.io/CSS3/" class="css3-loading">&gt;各种loading效果.</a></p>
+    </div>
+    <div class="col-md-2">
+        <div class="circleProgress_wrapper center-block">
+            <div class="progress">
+                <p class="progressText">70</p>
+                <div class="box"></div>
+                <div class="wrapper right">
+                    <div class="circleProgress rightcircle"></div>
+                </div>
+                <div class="wrapper left">
+                    <div class="circleProgress leftcircle"></div>
+                </div>
+            </div>
+        </div>
+        <h4>JavaScript</h4>
+        <p>熟悉ECMAScript语法,原生BOM/DOM,JSON, JSONP以及JS的原型和原型链等,并对JS的设置模式有所理解,且代码风格良好.</p>
+    </div>
+    <div class="col-md-2 col-md-offset-3">
+        <div class="circleProgress_wrapper center-block">
+            <div class="progress">
+                <p class="progressText">80</p>
+                <div class="box"></div>
+                <div class="wrapper right">
+                    <div class="circleProgress rightcircle"></div>
+                </div>
+                <div class="wrapper left">
+                    <div class="circleProgress leftcircle"></div>
+                </div>
+            </div>
+        </div>
+        <h4>Query/Zepto</h4>
+        <p>熟悉jQuery/Zepto,手写jQuery插件实现常见效果,并对jQuery源码进行过研究.<br><br></p>
+    </div>
+    <div class="col-md-2">
+        <div class="circleProgress_wrapper center-block">
+            <div class="progress">
+                <p class="progressText">65</p>
+                <div class="box"></div>
+                <div class="wrapper right">
+                    <div class="circleProgress rightcircle"></div>
+                </div>
+                <div class="wrapper left">
+                    <div class="circleProgress leftcircle"></div>
+                </div>
+            </div>
+        </div>
+        <h4>Requirejs/Webpack</h4>
+        <p>能使用requirejs进行代码的压缩打包.</p>
+    </div>
+    <div class="col-md-2">
+        <div class="circleProgress_wrapper center-block">
+            <div class="progress">
+                <p class="progressText">75</p>
+                <div class="box"></div>
+                <div class="wrapper right">
+                    <div class="circleProgress rightcircle"></div>
+                </div>
+                <div class="wrapper left">
+                    <div class="circleProgress leftcircle"></div>
+                </div>
+            </div>
+        </div>
+        <h4>Bootstrap</h4>
+        <p>使用Bootstrap完成常见响应式页面.</p>
+    </div>
+    <div class="col-md-8 col-md-offset-2 more"><h3>More...</h3></div>
+    <div class="col-md-1  more col-md-offset-2"><span>HTTP</span></div>
+    <div class="col-md-1  more"><span>GIT</span></div>
+    <div class="col-md-1  more"><span>php</span></div>
+    <div class="col-md-1  more"><span>SEO</span></div>
+    <div class="col-md-1  more"><span>AJAX</span></div>
+    <div class="col-md-1  more"><span>Node.js</span></div>
+    <div class="col-md-1  more"><span>ES6</span></div>
+    <div class="col-md-1  more"><span>...</span></div>
+
+    <!--<div class="col-lg-8">
+        <div class="more">
+            <h3>More...</h3>
+            <span>HTTP</span>
+            <span>GIT</span>
+            <span>php</span>
+            <span>SEO</span>
+            <span>AJAX</span>
+            <span>Node.js</span>
+            <span>ES6</span>
+            <span>...</span>
+        </div>
+    </div>-->
+</div>
+    <!--<ul class="clearfix">
         <li><a href="#skill">我的技能</a></li>
         <li><a href="#experience">工作经历</a></li>
         <li><a href="#productions">我的作品</a></li>
         <li><a href="#info">了解更多</a></li>
-    </ul>
-</nav>
+    </ul>-->
+
     <!--<div id="contact" class="container">
         <ul class="clearfix">
             <li>
@@ -55,8 +241,8 @@
             </li>&ndash;&gt;
         </ul>
     </div>-->
-    <div id="skill">
-        <div class="container clearfix">
+    <!--<div id="skill">
+        <div class="container-diy1 clearfix">
             <i class="fa fa-paper-plane logo1"></i>
             <h3>我的技能</h3>
         </div>
@@ -115,8 +301,22 @@
             <span>ES6</span>
             <span>...</span>
         </div>
+    </div>-->
+<div class="row container-fluid text-center" id="experience">
+    <div class="col-md-12 title-bar">
+        <i class="fa fa fa-wordpress logo1"></i><h3>工作经历</h3>
     </div>
-<div id="experience" class="container clearfix">
+    <div class="col-md-3 col-md-offset-3">
+        <div class="tree">
+            <div class="experience pre">
+                <h4 class="company">四川互联互加科技有限公司</h4>
+                <p>2015/9~2017/4</p>
+                <p>主要负责网站界面设计(PS)和前端代码DIV+CSS布局(HTML+CSS)与交互效果的实现(CSS3、jQuery、AJAX)；配合后台程序员实现网站的框架设计。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div id="experience" class="container-diy clearfix">
     <div class="exp-title">
         <i class="fa fa-wordpress logo"></i>
         <h3>工作经历</h3>
@@ -128,8 +328,90 @@
                 <p>主要负责网站界面设计(PS)和前端代码DIV+CSS布局(HTML+CSS)与交互效果的实现(CSS3、jQuery、AJAX)；配合后台程序员实现网站的框架设计。</p>
             </div>
         </div>
+</div>-->
+<div class="row container-fluid text-center" id="productions">
+    <div class="col-md-12  title-bar">
+        <div class="pro-title">
+            <i class="logo2 fa fa-cubes"></i>
+            <h3>我的作品</h3>
+        </div>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
+        <div class="item item1">
+            <a href="https://zhangwenjunr.github.io/resume/shopping/" target="_blank">
+                <div class="pf-text">
+                    <p class="text-des">一个在线购物商城，整合首屏轮播，店铺商品搜索切换，电商常用整站导航条，顶部粘连搜索框以及回到顶部等功能。</p>
+                </div>
+                <img src="img/1.jpg" alt=""/>
+            </a>
+            <h4>在线购物商城</h4>
+            <a href="https://github.com/ZhangWenJunR/resume/tree/master/shopping" class="btn">查看源代码</a>
+        </div>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
+        <div class="item item2">
+            <a href="https://www.npmjs.com/package/mark-server">
+                <div class="pf-text">
+                    <p class="text-des">一个基于Node.js的Markdown预览server,兼备静态服务器功能，一键打开浏览器预览，且能传入参数打开指定文件，当判断其为.md文件，将其进行解析并预览</p>
+                </div>
+                <img class="pf-img" src="img/markdown.png" alt=""/>
+            </a>
+            <h4>Markdown预览服务器</h4>
+            <a href="https://github.com/ZhangWenJunR/resume/tree/master/mark-server" class="btn">查看源代码</a>
+        </div>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
+        <div class="item item3">
+            <a href="https://zhangwenjunr.github.io/resume/sinanews/news.html" target="_blank">
+                <div class="pf-text">
+                    <p class="text-des">利用JSONP抓取新浪新闻摘要，将摘要内容通过瀑布流的方式布局在页面上，并采用曝光加载实现无限滚动加载功能。</p>
+                </div>
+                <img src="img/sinanews.png" alt=""/>
+            </a>
+            <h4>新浪新闻摘要</h4>
+            <a href="https://github.com/ZhangWenJunR/resume/tree/master/sinanews" target="_blank" class="btn">查看源代码</a>
+        </div>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
+        <div class="item item4">
+            <a href="https://zhangwenjunr.github.io/resume/enterprise/" target="_blank" class="show">
+                <div class="mark-one"></div>
+                <div class="mark-two"></div>
+                <div class="pf-text">
+                    <p class="text-des">常用企业站，包含常见前端效果：首页全屏轮播，导航条stickup，图片预加载，模块曝光淡入加载，滚动监听以及回到顶部功能，并使用requirejs进行打包处理</p>
+                </div>
+                <img src="img/enterprise.png" alt=" "/>
+            </a>
+            <h4>企业网站</h4>
+            <a href="https://github.com/ZhangWenJunR/resume/tree/master/enterprise" target="_blank" class="btn">查看源代码</a>
+        </div>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
+        <div class="item item5">
+            <a href="https://zhangwenjunr.github.io/resume/Angular/test.html" target="_blank" class="show">
+                <div class="pf-text">
+                    <p class="text-des">利用AngularJS指令与表单合作验证，进而实现表单验证的敏捷化开发</p>
+                </div>
+                <img src="img/register.png" alt=""/>
+            </a>
+            <h4>AngularJS表单验证</h4>
+            <a href="https://github.com/ZhangWenJunR/resume/tree/master/Angular" class="btn">查看源代码</a>
+        </div>
+    </div>
+    <div class="col-md-3 col-md-offset-1">
+        <div class="item item6">
+            <a href="https://zhangwenjunr.github.io/resume/music-player/" target="_blank" class="show">
+                <div class="pf-text">
+                    <i class="fa fa-plus-square-o"></i>
+                </div>
+                <img src="img/music-player.png" alt=""/>
+            </a>
+            <h4>音乐播放器</h4>
+            <a href="https://github.com/ZhangWenJunR/resume/tree/master/music-player" target="_blank" class="btn">查看源代码</a>
+        </div>
+    </div>
 </div>
-    <div id="productions" class="container">
+    <!--<div id="productions" class="container-diy">
         <div class="pro-title clearfix">
             <i class="logo2 fa fa-cubes"></i>
             <h3>我的作品</h3>
@@ -200,19 +482,69 @@
             </li>
         </ul>
     </div>
-</div>
-<div id="info">
+</div>-->
+<header class="container-fluid text-center" id="footer">
+    <!--<div class="icon">
+        <ul>
+            <li><a href="https://github.com/ZhangWenJunR/resume"><i class="fa fa-github"></i></a></li>
+            <li><a href="javascript:"><i class="fa fa-weibo"></i></a></li>
+        </ul>
+    </div>-->
+    <div class="info">
+        <h1>了解更多...</h1>
+        <p>日常使用GIT做版本控制，使用WebStorm进行开发，也在尝试新的工具，如Vim.</p>
+        <p>使用Markdown编写文档，撰写博客.</p>
+        <p>使用Google+github关键词来搜寻好用的库，在Stackoverflow上寻求问题解决之道.</p>
+        <p>把MDN当做文档来查，热爱书籍，啃各种技术文档.</p>
+        <p>在npm上了解更多好用的工具，也参与其中希望能贡献一份力量.</p>
+    </div>
+</header>
+<!--<div id="info">
     <h1>了解更多...</h1>
     <p>日常使用GIT做版本控制，使用WebStorm进行开发，也在尝试新的工具，如Vim.</p>
     <p>使用Markdown编写文档，撰写博客.</p>
     <p>使用Google+github关键词来搜寻好用的库，在Stackoverflow上寻求问题解决之道.</p>
     <p>把MDN当做文档来查，热爱书籍，啃各种技术文档.</p>
     <p>在npm上了解更多好用的工具，也参与其中希望能贡献一份力量.</p>
-</div>
-<div id="goTop">
+</div>-->
+<!--<div id="goTop">
     <a href="#header"><i class="fa fa-rocket"></i></a>
-</div>
-<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<script src="js/stickup.js"></script>
+</div>-->
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    function progress() {
+        var $progress = $('.circleProgress_wrapper .progress');
+        $progress.on('click',function () {
+            var $this = $(this);
+            var text =$this.parents('.circleProgress_wrapper').find('.progressText').text();
+            var cur = $this.parents('.circleProgress_wrapper').find('.progressText');
+            var parents = $this.parents('.circleProgress_wrapper');
+            console.log(text);
+            var num = parseInt(text);
+            var x,y;
+            var a=0;
+            var clock = setInterval(function () {
+                a++;
+                x = 45-3.6*(100-a);
+                y = 45-3.6*(50-a);
+                if (a>=50){
+                    parents.find($('.leftcircle')).css("transform","rotate("+x+"deg)");
+                    parents.find($('.rightcircle')).css("transform","rotate(45deg)");
+                }
+                else if (50>a>=0){
+                    parents.find(('.leftcircle')).css("transform","rotate(225deg)");
+                    parents.find(('.rightcircle')).css("transform","rotate("+y+"deg)");
+                }
+                cur.text(a+'%');
+                if(a===num){
+                    clearInterval(clock);
+                }
+            },50);
+        });
+        $progress.click();
+    }
+    progress();
+</script>
 </body>
 </html>
