@@ -41,7 +41,7 @@ body{
 }
 nav #navlist ul{
     padding-left:20%;
-    background-color:rgba(253,253,253,0.7);
+    background-color:rgba(248,248,248,0.7);
     margin-top:20px;
     margin-bottom:30px;
 }
@@ -127,10 +127,10 @@ nav > ul > li > a {
     margin-bottom:30px;
 }
 #skill .title-bar .logo1{
-    float:left;
     font-size:24px;
     color:#b84d45;
-    margin:20px 10px 20px 20px;
+    margin-left:20px;
+    margin-right:10px;
 }
 /*
 #skill h3{
@@ -313,17 +313,16 @@ nav > ul > li > a {
 
 #experience .title-bar{
     text-align: left;
-    margin-top:30px;
-    margin-bottom:20px;
+
+
 }
 #experience .title-bar .logo1{
     float:left;
     font-size:24px;
     color:#b84d45;
-    margin:20px 10px 20px 20px;
-}
-#experience .title-bar h3{
-    text-align: left;
+    margin-left:20px;
+    margin-right:10px;
+
 }
 #experience .tree {
     margin-top: 50px;
