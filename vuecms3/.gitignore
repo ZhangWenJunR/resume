@@ -1,0 +1,21 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+<<<<<<< HEAD
+node_modules
+dist
+.idea
+=======
+node_modules
+>>>>>>> 829c6b87bf38ff4a8307b039fa783e1c5c2b63c0
